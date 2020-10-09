@@ -16,11 +16,11 @@ import com.example.progmob_2020.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecyclerAdapter.ViewHolder> {
+public class MahasiswaCardAdapter extends RecyclerView.Adapter<MahasiswaCardAdapter.ViewHolder> {
     private Context context;
     private List<Mahasiswa> mahasiswaList;
 
-    public MahasiswaRecyclerAdapter(Context context) {
+    public MahasiswaCardAdapter(Context context) {
         this.context = context;
         mahasiswaList = new ArrayList<>();
     }
@@ -44,11 +44,11 @@ public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecy
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-    Mahasiswa m = mahasiswaList.get(position);
+        Mahasiswa m = mahasiswaList.get(position);
 
-    holder.tvNama.setText(m.getNama());
-    holder.tvNim.setText(m.getNim());
-    holder.tvNoTelp.setText(m.getNotelp());
+        holder.tvNama.setText(m.getNama());
+        holder.tvNim.setText(m.getNim());
+        holder.tvNoTelp.setText(m.getNotelp());
     }
 
     @Override

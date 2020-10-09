@@ -1,6 +1,7 @@
 package com.example.progmob_2020.Pertemuan;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,20 +15,17 @@ import com.example.progmob_2020.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecycleActivity extends AppCompatActivity {
+public class CardViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycle);
+        setContentView(R.layout.activity_card_view);
 
-        RecyclerView rv = (RecyclerView)findViewById(R.id.rvLatihan);
-        MahasiswaRecyclerAdapter mahasiswaRecyclerAdapter;
+        CardView rv  = (CardView)findViewById(R.id.rvLatihan);
+        MahasiswaCardAdapter mahasiswaRecyclerAdapter;
 
-        //data
         List<Mahasiswa> mahasiswaList = new ArrayList<Mahasiswa>();
-
-        //generate data mahasiswa
         Mahasiswa m1 = new Mahasiswa("Selvia", "72180265", "081265875645");
         Mahasiswa m2 = new Mahasiswa("Ani", "72180266", "081265756986");
         Mahasiswa m3 = new Mahasiswa("Calno", "72180245", "081265873457");
@@ -40,16 +38,14 @@ public class RecycleActivity extends AppCompatActivity {
         mahasiswaList.add(m4);
         mahasiswaList.add(m5);
 
-        mahasiswaRecyclerAdapter = new MahasiswaRecyclerAdapter(RecycleActivity.this);
-        mahasiswaRecyclerAdapter.setMahasiswaList(mahasiswaList);
 
-        rv.setLayoutManager(new LinearLayoutManager(RecycleActivity.this));
-        rv.setAdapter(mahasiswaRecyclerAdapter);
-    }
+        MahasiswaCardAdapter mahasiswaCardAdapter = new MahasiswaCardAdapter(CardViewActivity.this);
+        mahasiswaCardAdapter.setMahasiswaList(mahasiswaList);
 
-    public void setLayoutManager(LinearLayoutManager linearLayoutManager) {
-    }
+        //rv.getLayoutManager(new LinearLayoutManager(CardViewActivity.this));
+        //rv.setAdapter(mahasiswaCardAdapter);
 
-    public void setAdapter(MahasiswaCardAdapter mahasiswaCardAdapter) {
+
+
     }
 }

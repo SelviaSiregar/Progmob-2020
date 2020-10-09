@@ -1,6 +1,7 @@
 package com.example.progmob_2020;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,21 +11,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.progmob_2020.Pertemuan.CardViewActivity;
 import com.example.progmob_2020.Pertemuan.ListActivity;
 import com.example.progmob_2020.Pertemuan.RecycleActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tes_constraint_layout);
+        setContentView(R.layout.activity_main);
 
         //variable
         final TextView textView = (TextView) findViewById(R.id.mainActivityTextView);
+
         Button myBtn = (Button)findViewById(R.id.button1);
         final EditText myEditText = (EditText)findViewById(R.id.editText1);
         Button btnHelp = (Button)findViewById(R.id.btnHelp);
+        Button btnTracker = (Button)findViewById(R.id.btnTracker);
 
         //pertemuan2
         Button btnList = (Button)findViewById(R.id.buttonListView);
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnCard = (Button)findViewById(R.id.buttonCardView);
 
         //action
-       textView.setText(R.string.text_hello_world);
+       //textView.setText(R.string.text_hello_world);
         myBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,5 +70,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        
+        //btnCard.setOnClickListener((v)-> {
+            //Intent intent = new Intent(MainActivity.this, CardViewActivity.class);
+            //startActivity(intent);
+        //});
     }
 }
