@@ -1,26 +1,22 @@
 package com.example.progmob_2020.Adapter;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.progmob_2020.Model.Mahasiswa;
 import com.example.progmob_2020.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecyclerAdapter.ViewHolder> {
+public class MahasiswaRecycleAdapter extends RecyclerView.Adapter<MahasiswaRecycleAdapter.ViewHolder> {
     private Context context;
     private List<Mahasiswa> mahasiswaList;
 
-    public MahasiswaRecyclerAdapter(Context context) {
+    public MahasiswaRecycleAdapter(Context context) {
         this.context = context;
         mahasiswaList = new ArrayList<>();
     }
@@ -34,21 +30,20 @@ public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecy
         notifyDataSetChanged();
     }
 
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_list_cardview,parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_list_card_view, parent, false);
         return  new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-    Mahasiswa m = mahasiswaList.get(position);
+        Mahasiswa m = mahasiswaList.get(position);
 
-    holder.tvNama.setText(m.getNama());
-    holder.tvNim.setText(m.getNim());
-    holder.tvNoTelp.setText(m.getNotelp());
+        holder.tvNama.setText(m.getNama());
+        holder.tvNim.setText(m.getNim());
+        holder.tvNoTelp.setText(m.getNotelp());
     }
 
     @Override
@@ -56,7 +51,7 @@ public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecy
         return mahasiswaList.size();
     }
 
-    public  class  ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvNama, tvNim, tvNoTelp;
 
         public ViewHolder(@NonNull View itemView) {

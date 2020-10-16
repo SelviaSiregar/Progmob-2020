@@ -17,5 +17,6 @@ public class HelpActivity extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         String textHelp = b.getString("help_string");
         txtHelp.setText(textHelp);
+
     }
 }
